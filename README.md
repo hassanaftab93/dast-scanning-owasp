@@ -16,7 +16,8 @@
     - [Step 2: Start Your Localhost Application](#step-2-start-your-localhost-application)
     - [Step 3: Run the ZAP Scan](#step-3-run-the-zap-scan)
       - [Explanation of the Command](#explanation-of-the-command)
-      - [Additional Flags to pass to image](#additional-flags-to-pass-to-image)
+      - [Additional Flags to pass to Image](#additional-flags-to-pass-to-image)
+      - [Zap Image DOcumentation](#zap-image-documentation)
     - [Step 4: Retrieve the HTML Report](#step-4-retrieve-the-html-report)
     - [Additional Tips](#additional-tips)
 
@@ -137,7 +138,7 @@ Use the following command to run the ZAP scanner against your localhost applicat
 - `-t http://localhost:8000`: Specifies the target URL for the scan.
 - `-r scan-report.html`: Specifies the name of the report file to generate.
 
-#### Additional Flags to pass to image
+#### Additional Flags to pass to Image
 
 ```bash
 Usage: zap-baseline.py -t <target> [options]
@@ -170,6 +171,10 @@ Options:
     --auto            use the automation framework if supported for the given parameters (this will become the default soon)
     --autooff         do not use the automation framework even if supported for the given parameters
 ```
+
+#### Zap Image DOcumentation
+
+- [ZAP Docker Image Documentation Reference](https://www.zaproxy.org/docs/docker/)
 
 ### Step 4: Retrieve the HTML Report
 
