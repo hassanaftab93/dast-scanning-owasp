@@ -16,6 +16,7 @@
     - [Step 2: Start Your Localhost Application](#step-2-start-your-localhost-application)
     - [Step 3: Run the ZAP Scan](#step-3-run-the-zap-scan)
       - [Explanation of the Command](#explanation-of-the-command)
+      - [Additional Flags to pass to image](#additional-flags-to-pass-to-image)
     - [Step 4: Retrieve the HTML Report](#step-4-retrieve-the-html-report)
     - [Additional Tips](#additional-tips)
 
@@ -135,6 +136,40 @@ Use the following command to run the ZAP scanner against your localhost applicat
 - `zap-full-scan.py`: This is a script provided by ZAP for running a full scan, which performs a deeper and more thorough scan. It will take a while though....
 - `-t http://localhost:8000`: Specifies the target URL for the scan.
 - `-r scan-report.html`: Specifies the name of the report file to generate.
+
+#### Additional Flags to pass to image
+
+```bash
+Usage: zap-baseline.py -t <target> [options]
+    -t target         target URL including the protocol, eg https://www.example.com
+Options:
+    -h                print this help message
+    -c config_file    config file to use to INFO, IGNORE or FAIL warnings
+    -u config_url     URL of config file to use to INFO, IGNORE or FAIL warnings
+    -g gen_file       generate default config file (all rules set to WARN)
+    -m mins           the number of minutes to spider for (default 1)
+    -r report_html    file to write the full ZAP HTML report
+    -w report_md      file to write the full ZAP Wiki (Markdown) report
+    -x report_xml     file to write the full ZAP XML report
+    -J report_json    file to write the full ZAP JSON document
+    -a                include the alpha passive scan rules as well
+    -d                show debug messages
+    -P                specify listen port
+    -D secs           delay in seconds to wait for passive scanning 
+    -i                default rules not in the config file to INFO
+    -I                do not return failure on warning
+    -j                use the Ajax spider in addition to the traditional one
+    -l level          minimum level to show: PASS, IGNORE, INFO, WARN or FAIL, use with -s to hide example URLs
+    -n context_file   context file which will be loaded prior to spidering the target
+    -p progress_file  progress file which specifies issues that are being addressed
+    -s                short output format - dont show PASSes or example URLs
+    -T mins           max time in minutes to wait for ZAP to start and the passive scan to run
+    -U user           username to use for authenticated scans - must be defined in the given context file (post 2.9.0)
+    -z zap_options    ZAP command line options e.g. -z "-config aaa=bbb -config ccc=ddd"
+    --hook            path to python file that define your custom hooks
+    --auto            use the automation framework if supported for the given parameters (this will become the default soon)
+    --autooff         do not use the automation framework even if supported for the given parameters
+```
 
 ### Step 4: Retrieve the HTML Report
 
