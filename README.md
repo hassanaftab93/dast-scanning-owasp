@@ -17,8 +17,9 @@
     - [Step 3: Run the ZAP Scan](#step-3-run-the-zap-scan)
       - [Explanation of the Command](#explanation-of-the-command)
       - [Additional Flags to pass to Image](#additional-flags-to-pass-to-image)
-      - [Zap Image DOcumentation](#zap-image-documentation)
+      - [Zap Image Documentation](#zap-image-documentation)
     - [Step 4: Retrieve the HTML Report](#step-4-retrieve-the-html-report)
+      - [Zap Web Swing](#zap-web-swing)
     - [Additional Tips](#additional-tips)
 
 ## Introduction
@@ -172,13 +173,23 @@ Options:
     --autooff         do not use the automation framework even if supported for the given parameters
 ```
 
-#### Zap Image DOcumentation
+#### Zap Image Documentation
 
 - [ZAP Docker Image Documentation Reference](https://www.zaproxy.org/docs/docker/)
 
 ### Step 4: Retrieve the HTML Report
 
 Once the scan is complete, an HTML report named `scan-report.html` will be saved in your current working directory. You can open this file in any web browser to view the detailed security scan report.
+
+#### Zap Web Swing
+
+- [ZAP Web Swing Documentation](https://www.zaproxy.org/docs/docker/webswing/)
+
+```bash
+  docker run -v $(pwd):/zap/wrk/:rw -u zap -p 8080:8080 -p 8090:8090 -i ghcr.io/zaproxy/zaproxy:stable zap-webswing.sh
+```
+
+then open [localhost:8080/zap](http://localhost:8080/zap)
 
 ### Additional Tips
 
